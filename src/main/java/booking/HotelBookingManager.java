@@ -1,19 +1,20 @@
 package booking;
 
-import com.google.common.collect.Sets;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Queues;
 import common.BookingManager;
 import common.BookingRecord;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
+import java.util.Queue;
 import java.util.stream.Collectors;
 
 import static java.lang.String.format;
 
 public class HotelBookingManager implements BookingManager {
 
-    private final Set<BookingRecord> bookings = Sets.newConcurrentHashSet();
+    private final List<BookingRecord> bookings = Lists.newCopyOnWriteArrayList();
     private final List<Integer> hotelRooms;
 
     private HotelBookingManager(List<Integer> hotelRooms) {
@@ -40,7 +41,7 @@ public class HotelBookingManager implements BookingManager {
 
     public Iterable<Integer> getAvailableRooms(LocalDate date) {
         return hotelRooms.stream()
-                .filter(room -> isRoomAvailable(room,date))
+                .filter(room -> isRoomAvailable(room, date))
                 .collect(Collectors.toList());
     }
 
