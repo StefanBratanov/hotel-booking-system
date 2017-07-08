@@ -1,13 +1,11 @@
 package booking;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Queues;
 import common.BookingManager;
 import common.BookingRecord;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Queue;
 import java.util.stream.Collectors;
 
 import static java.lang.String.format;
