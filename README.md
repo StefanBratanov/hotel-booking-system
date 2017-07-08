@@ -1,6 +1,6 @@
 ## Hotel Booking System
 
->A simple hotel booking system keeps track of the rooms in a hotel.
+>A simple hotel booking system which keeps track of the rooms in a hotel.
 >A guest can book a room for individual nights and the booking system maintains the state of these bookings.
 >Guests are identified by their surname which, for the purposes of this exercise, can be considered unique.
 >Rooms are identified by a unique number taken from an arbitrary, potentially non- sequential set of numbers.
